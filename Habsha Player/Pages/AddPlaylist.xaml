@@ -1,0 +1,83 @@
+﻿<Page 
+    x:Class="Habsha_Player.Pages.AddPlaylist"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Habsha_Player.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="644" Width="1223">
+
+
+    <Grid Margin="30,46,42,46" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="249*"/>
+            <RowDefinition Height="231*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="243*"/>
+            <ColumnDefinition Width="908*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="txtPlaylistName" Grid.Column="1" PlaceholderText="Name This Playlist" HorizontalAlignment="Left" Margin="31,13,0,0" FontSize="25" VerticalAlignment="Top" Width="383" Height="54"/>
+        <Button x:Name="btnSelectMusic" Content="Select music" Grid.Column="1" HorizontalAlignment="Left" Background="LightBlue" Margin="460,15,0,0" FontSize="25" VerticalAlignment="Top" Width="173" Click="btnSelectMusic_Click"/>
+        <Button x:Name="button" Content="Create" Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top" Height="47" Width="141" FontSize="25" Margin="474,0,0,0" Click="button_Click" Background="LightBlue" />
+        <Button x:Name="button1" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="47" Width="141" Click="button1_Click" FontSize="25" Margin="649,0,0,0" Background="LightBlue"/>
+        <Button x:Name="btnBrowse" Content="Browse" Tapped="PlaylistImage" HorizontalAlignment="Left" Background="LightBlue" Margin="-1,27,0,0" Grid.Row="2" VerticalAlignment="Top" Height="32" Width="212" Click="btnBrowse_Click"/>
+        <StackPanel x:Name="ImagePlace" AllowDrop="True" Background="AliceBlue" HorizontalAlignment="Left"  Grid.Row="1" Orientation="Horizontal" Width="219" Margin="-9,18,0,25" VerticalAlignment="Stretch" />
+        <ListView   Name="myPlaylist" ItemsSource="{x:Bind MusicList1}" SelectionMode="None"
+          IsItemClickEnabled="True" Margin="9,11,38,51" Grid.Row="1" Grid.Column="1" 
+          >
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Padding="12" Background="LightBlue">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="150"/>
+
+
+
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Title" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="1" Text="Artist" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="2" Text="Album" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="3" Text="Duration" Style="{ThemeResource CaptionTextBlockStyle}"/>
+
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+
+                    <Grid  Height="48" AutomationProperties.Name="{Binding Title}" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="150"/>
+
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center" Style="{ThemeResource BaseTextBlockStyle}" Text="{Binding Title}" />
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding Artist}"/>
+                        <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{Binding Album}"/>
+                        <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="{Binding Duration}"/>
+
+                    </Grid>
+
+                </DataTemplate>
+
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <TextBlock x:Name="txtcoverImage" HorizontalAlignment="Left" Margin="126,0,0,0" Grid.Row="1" Text="Cover Image" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+    </Grid>
+
+</Page>
+
+ 

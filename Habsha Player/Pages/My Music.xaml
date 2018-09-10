@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="Habsha_Player.Pages.My_Music"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Habsha_Player.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123"/>
+            <ColumnDefinition Width="1377"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58*" />
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="355*"/>
+        </Grid.RowDefinitions>
+        <Image  Grid.Row="2" Grid.Column="1" Source="/Assets/m2.png" Visibility="Visible" RequestedTheme="Light" Opacity="0.25" Margin="0,25,54,111" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image.Projection>
+                <PlaneProjection RotationZ="0"   />
+
+            </Image.Projection>
+        </Image>
+        <SplitView x:Name="Music_menu" IsPaneOpen="False" DisplayMode="CompactOverlay"  Grid.RowSpan="4" CompactPaneLength="50" OpenPaneLength="250" Margin="0,0,1203,0" Grid.ColumnSpan="2">
+            <SplitView.Pane >
+                <StackPanel Background="LightBlue" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                    <Button x:Name="musicButton" FontFamily="segoe MDL2 Assets" Content="&#xE700;" Click="musicButton_Click_1" Background="{x:Null}"/>
+
+                    <StackPanel Orientation="Horizontal" >
+                        <Button x:Name="btnmy_music" FontSize="25" Margin="3,50,0,0" FontFamily="segoe MDL2 Assets"  Content="&#xE8D6;" HorizontalAlignment="Left" VerticalAlignment="Top"  Background="{x:Null}" Click="btnmy_music_Click" />
+                        <TextBlock Text="My Music"  Margin="30,50,0,0" FontSize="20" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <Button x:Name="btnNowPlaying" FontSize="25" Margin="3,25,0,0" FontFamily = "segoe MDL2 Assets" Content="&#xE786;"  HorizontalAlignment="Left" VerticalAlignment="Top"  Background="{x:Null}" Click="btnNowPlaying_Click" />
+                        <TextBlock Text="Now Playing"  Margin="30,25,0,0" FontSize="20" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <Button x:Name="btnPlaylist" FontSize="25" Margin="3,25,0,0" FontFamily = "segoe MDL2 Assets" Content="&#xE728;" HorizontalAlignment="Left" VerticalAlignment="Top"  Background="{x:Null}" Click="btnPlaylist_Click"/>
+                        <TextBlock Text="PlayList"  Margin="30,25,0,0" FontSize="20" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <Button x:Name="btnsetting" FontSize="25" Margin="3,400,0,0"  FontFamily = "segoe MDL2 Assets" Content="&#xE713;"  HorizontalAlignment="Left" VerticalAlignment="Top"  Background="{x:Null}"/>
+                        <TextBlock Text="Setting"  Margin="30,400,0,0" FontSize="20" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:Name="Frames" Margin="106,65,-1031,207" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </SplitView.Content>
+
+
+        </SplitView>
+
+
+
+
+    </Grid>
+</Page>
